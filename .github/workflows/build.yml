@@ -29,7 +29,7 @@ jobs:
 
       - name: Compile tests
         run: |
-          make -C tests/swkbd
+          make -C tests/software_keyboard
 
       - name: Upload binaries
         uses: actions/upload-artifact@v2
