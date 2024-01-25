@@ -30,6 +30,7 @@ jobs:
       - name: Compile tests
         run: |
           make -C tests/software-keyboard
+          make -C tests/mii-selector
 
       - name: Upload binaries
         uses: actions/upload-artifact@v2
