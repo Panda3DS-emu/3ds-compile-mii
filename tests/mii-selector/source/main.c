@@ -7,10 +7,10 @@ int main(int argc, char **argv)
 	consoleInit(GFX_TOP, NULL);
 	consoleDebugInit(debugDevice_SVC);
 
-	fprint(stderr, "Mii selector demo.\n");
-	fprint(stderr, "Press A to bring up Mii selector with default settings.\n");
-	fprint(stderr, "Press B to bring up Mii selector with custom settings.\n");
-	fprint(stderr, "Press START to exit.\n");
+	fprintf(stderr, "Mii selector demo.\n");
+	fprintf(stderr, "Press A to bring up Mii selector with default settings.\n");
+	fprintf(stderr, "Press B to bring up Mii selector with custom settings.\n");
+	fprintf(stderr, "Press START to exit.\n");
 
 	while (aptMainLoop())
 	{
@@ -64,24 +64,24 @@ int main(int argc, char **argv)
 			{
 				if (!msRet.no_mii_selected)
 				{
-					fprint(stderr, "A Mii was selected.\n");
+					fprintf(stderr, "A Mii was selected.\n");
 					miiSelectorReturnGetName(&msRet, miiname, sizeof(miiname));
 					miiSelectorReturnGetAuthor(&msRet, miiauthor, sizeof(miiauthor));
-					fprint(stderr, "Name: %s\n", miiname);
-					fprint(stderr, "Author: %s\n", miiauthor);
-					fprint(stderr, "Birthday: Month-%d/Day-%d\n", msRet.mii.mii_details.bday_month, msRet.mii.mii_details.bday_day);
-					fprint(stderr, "Sex: %d\n", msRet.mii.mii_details.sex);
-					fprint(stderr, "Color: %d\n", msRet.mii.mii_details.shirt_color);
-					fprint(stderr, "Favorite: %d\n", msRet.mii.mii_details.favorite);
+					fprintf(stderr, "Name: %s\n", miiname);
+					fprintf(stderr, "Author: %s\n", miiauthor);
+					fprintf(stderr, "Birthday: Month-%d/Day-%d\n", msRet.mii.mii_details.bday_month, msRet.mii.mii_details.bday_day);
+					fprintf(stderr, "Sex: %d\n", msRet.mii.mii_details.sex);
+					fprintf(stderr, "Color: %d\n", msRet.mii.mii_details.shirt_color);
+					fprintf(stderr, "Favorite: %d\n", msRet.mii.mii_details.favorite);
 					// Keep in mind that not all things align with their order in Mii Maker.
 					// https://www.3dbrew.org/wiki/Mii#Mii_values
-					fprint(stderr, "Eyebrow: %d\n", msRet.mii.eyebrow_details.style);
-					fprint(stderr, "Eyebrow color: %d\n", msRet.mii.eyebrow_details.color);
-					fprint(stderr, "Nose: %d\n", msRet.mii.nose_details.style);
+					fprintf(stderr, "Eyebrow: %d\n", msRet.mii.eyebrow_details.style);
+					fprintf(stderr, "Eyebrow color: %d\n", msRet.mii.eyebrow_details.color);
+					fprintf(stderr, "Nose: %d\n", msRet.mii.nose_details.style);
 				} else
-					fprint(stderr, "No Mii was selected.\n");
+					fprintf(stderr, "No Mii was selected.\n");
 			} else
-				fprint(stderr, "Return checksum invalid.\n");
+				fprintf(stderr, "Return checksum invalid.\n");
 		}
 
 		// Flush and swap framebuffers
