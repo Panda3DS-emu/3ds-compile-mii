@@ -31,6 +31,7 @@ jobs:
         run: |
           make -C tests/software-keyboard
           make -C tests/mii-selector
+          make -C tests/crotools/elf2cro
           make -C tests/crotools/example_cro
           make -C tests/crotools/example_inject
 
